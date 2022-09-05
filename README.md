@@ -1,3 +1,19 @@
+l1 là : code khi khởi tạo ứng dụng
+l3_login_my là : Bài tập về nhà buổi 2  vẽ giao diện đăng nhập a Đại hướng dẫn
+l5_StateFullWidget_my : Bài tập về nhà buổi 5 vẽ giao diện giỏ hàng có cộng trừ item
+l8_Future_FutureBuilder_https_my: Bài tậo vê nhà buổi 8 về Future + FutureBuilder + https
+
+l4_navigator == learning_flutter
+
+l5_StateFullWidget_cart == learning_cart
+learning_cart: Buổi 6 cũng là của bạn hungf1324 nhưng đã set-url git của thầy duylehong  : Dạy về stateFull  quản lý state ở trong cùng 1 màn hình
+
+l5_StateFullWidget_ecommerce == learning_ecommerce
+l6_StateFullWidget_ecommerce_app == ecommerce_app
+l8_Future_https == learning_album
+l9_provider_ecommerce_app == provider_ecommerce_app
+
+
 
 
 
@@ -102,6 +118,9 @@ container làm được tất cả mọi CSS
 MediaQuery.of(context).size.width   : Lấy chiều ngang màn hình
 SizeBox : Để có khoảng trống chiều rộng chiều ngang gì đấy
 
+//Buổi 6 19/8/2022
+// project clone từ git của bạn hùng : chưa thay đổi set-url
+// mở thiết bị ảo ios trên android studio . Phải mở trước máy ảo IOS thuộc Xcode lên
 
 Buổi 6: 18/8/2022
 chỉ đưa cái widget ra ngoài khi mình càn loại widget khác nhau
@@ -150,3 +169,100 @@ method của Class == callback của Function
  name source file bắt buộc lowercase_with_underscore
 
  Buổi 7 : 22/8/2022
+22/8/2022
+trong flutter
+ tên folder nên viết camelcase : viết thường chữ cái đầu
+ Tên class nên viết hoa chữ cái đầu
+
+ Buổi 7 : ngày 23/8/2022 quản lý state Bloc
+ bước đàu tiên khi clone
+ vào yaml . ấn pub get
+
+ flutter updgare : cập nhật cả phiên bản của flutter , cả dart
+
+
+//Cách quản lý thư mục của dự án
+ widget : commont có thể dùng chung , có thể dùng cho các dự án khác
+ components : cái common nhỏ cấu thành , và chỉ có thể dùng ở dự án này
+
+
+MediaQuery  : Lấy kích thước thiết bị còn có thể lấy màn hình đang chiều dọc hay chiều ngang ,
+var _size = MediaQuery.of(context).size
+double width = _size.width
+double height = _size.height_
+con số độc lập không phụ thuộc px , Đây là kích thước vật lý của màn hình _
+nếu kx ra 1 ứng dụng phải có 2 giao diện : 1 đứng , 1 ngang
+
+chiều cao nút bấm thường 70 80 gì đấy
+
+Không cho người dùng xoay theo chiều ngang . flutter lock screen orientation
+
+LayoutBuilder  : thường bọc bên ngoài , nếu < 600 hiển thị 1 kiểu . >600 hiển thị 1 kiểu
+ sử dụng if() else để có thể hiển thị giao diện nào
+
+ LayoutBuilder(builder(BuilderContext , BoxConstraints constraints) {
+ if (constraints.maxWidth < 600 ) {
+ }
+
+ Buổi 7 : 23/8/2022
+ Trái của app bar
+ trái = left = start = leading
+ phải = right = end=
+
+
+ widget visibility : hiển thị hay không
+ SafeArea (top : false , )
+ SingleChildScrollView( scrollDirection : Axis.Horizontal)  // theo chiều ngang
+
+ GridView.builder : từ trái qua phải từ trên xuống dưới
+ childAspectRatio : Chiều rộng so với chiều cao trong GridView
+ crossAxisSpacing : Khoảng cách nằm ngang giữa 1 phần tử
+ mainAxisSpacing : Khoảng cách nằm dọc  giữa 2 phần tử
+
+  tất cả âm thanh , hình ảnh , font chữ : để vào assets : Tài nguyên đặt file gì cũng được hết
+
+ inkWell có hiệu ứng đổ bóng:
+
+ class === object (ES6) javaScript
+ Image.assets : Để hiển thị hình ảnh lấy được từ thư mục
+ Hình ảnh nên để 1 chiều  chiều còn lại tự động
+
+
+ Để có thể sửa 1 từ ở tất cả mọi file thì bôi đen . refacter/ rename
+
+ conflict xảy ra khi cùng code 1 chỗ
+ trên thanh tabbar có git
+ dấu 1: update git pull project
+ dấu 2: add + commit + push
+ dấu 3: git push
+
+ khi conflict thì có thể nên bấm merger để có thể merger code bằng tay xem chọn cái hiện tại hay chọn cái trên git repo
+
+
+ Buổi 8: 25/8/2022 Khi viết code can thiệp vào native thì có thể viết vào MainActivity.ks
+ res trong đó chứa icon của app
+ tên vào iocn trong app bên android là ở Mainifest :  phiên bản code và phiên bản app cũn ở trong này
+
+ Khi mà .then tức hàm đó chạy xong mới chạy hàm dưới
+
+ .timeout()  để có thể ứng thời gian cho call API việc bất đồng bộ
+
+ Future<bool>
+ await  bắt buộc câu lệnh đi tuần tự ,m câu đó thực hiện xong mới chạy câu lệnh bên dưới trong thân hàm async
+
+  trong pubspec.yaml   ấn Pub get để có thể tả i tất cả các thư viện trong dependencies
+
+  Buổi 9 30/8/2022 : Quản lý state
+  Cách đầu tiên StatefulWidget
+  Mỗi cái có ưu điển nhược điểm khác nhau
+
+
+Buổi  10 : 1/9/2022 : Quản lý state bằng Bloc
+ ứng dụng xem phim APi public themoviedb.org
+
+Gửi tin nhắn cho nhau rất dơn giản sử dụng video , gửi emoji ,âm thanh , video , ticker thì cao hơn chút
+Đã xem , đã đọc chưa xem
+Mã hoá tin nhắn đầu cuối ; snapChat
+Cài đặt hẹn giờ  1 phút mất đi
+
+

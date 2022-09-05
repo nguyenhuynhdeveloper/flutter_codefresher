@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_18">
    <application
-        android:label="flutter_18"
+        android:label="MyApp_18"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -32,3 +32,6 @@
             android:value="2" />
     </application>
 </manifest>
+
+
+  <!-- Thayd dổi icon , -->
