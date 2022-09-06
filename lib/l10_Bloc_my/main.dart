@@ -71,6 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             StreamBuilder<ChannelState>(
               // sử dụng StreamBuilder để lắng nghe Stream <=== new
+
+
               stream: channelBloc.channelStateController.stream,
 
 
