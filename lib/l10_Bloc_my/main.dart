@@ -77,6 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // truyền stream của stateController vào để lắng nghe <=== new
               initialData: channelBloc.channelState,
+
+
+
               // giá trị khởi tạo chính là volume 70 hiện tại <=== new
               builder:
                   (BuildContext context, AsyncSnapshot<ChannelState> snapshot) {
