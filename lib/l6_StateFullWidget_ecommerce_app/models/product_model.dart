@@ -1,4 +1,4 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/constants/img_string.dart';
+import '../constants/img_string.dart';
 
 class ProductModel {
   final int id;

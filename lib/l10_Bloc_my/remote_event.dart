@@ -1,5 +1,5 @@
 
-//Tăng giảm âm lượng
+// VOLUME
 abstract class RemoteEvent {}
 
 // event tăng âm lượng, user muốn tăng lên bao nhiêu thì truyền vào biến increment
@@ -17,23 +17,19 @@ class DecrementEvent extends RemoteEvent {
 // event mute
 class MuteEvent extends RemoteEvent {}
 
-// Tăng giảm kênh
+// CHANNEL
 abstract class ChannelEvent {}
 
-// event tăng kênh user muốn tăng lên bao nhiêu thì truyền vào biến increment
 class ChannelIncrementEvent extends ChannelEvent {
   ChannelIncrementEvent(this.increment);
   final int increment;
 }
 
-// event giảm kênh, user muốn giảm bao nhiêu thì truyền vào biến decrement
 class ChannelDecrementEvent extends ChannelEvent {
   ChannelDecrementEvent(this.decrement);
   final int decrement;
 }
 
-// // event mute
-// class MuteEvent extends RemoteEvent {}
 
 
 

@@ -1,5 +1,6 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import '../widgets/custom_text.dart';
+
 
 class BadgeButton extends StatelessWidget {
   const BadgeButton({

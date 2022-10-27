@@ -1,9 +1,11 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/components/product_counter.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/utils/device_parameters.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/widgets/custom_container.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/widgets/custom_text.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/widgets/round_image.dart';
 import 'package:flutter/material.dart';
+
+import '../components/product_counter.dart';
+import '../../../utils/device_parameters.dart';
+import '../../../widgets/custom_container.dart';
+import '../../../widgets/custom_text.dart';
+import '../../../widgets/round_image.dart';
+
 
 class CartItem extends StatelessWidget {
   const CartItem({
@@ -13,9 +15,10 @@ class CartItem extends StatelessWidget {
     required this.productSize,
     required this.productPrice,
     required this.onPressedItem,
-    required this.onPressedRemoveButton,
     required this.productCount,
     required this.onPressedAddButton,
+    required this.onPressedRemoveButton,
+
   }) : super(key: key);
 
   final String productImage;
@@ -23,9 +26,10 @@ class CartItem extends StatelessWidget {
   final int productSize;
   final double? productPrice;
   final Function()? onPressedItem;
-  final Function(int) onPressedRemoveButton;
   final int productCount;
   final Function(int) onPressedAddButton;
+  final Function(int) onPressedRemoveButton;
+
 
   @override
   Widget build(BuildContext context) {

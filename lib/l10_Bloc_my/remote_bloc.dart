@@ -12,12 +12,11 @@ class RemoteBloc {
 
   // tạo 2 controller
   // 1 cái quản lý event, đảm nhận nhiệm vụ nhận event từ UI
-  final eventController = StreamController<RemoteEvent>();
+  final eventController = StreamController<RemoteEvent>();   // <RemoteEvent> là kiểu dữ liệu trả về
 
   // 1 cái quản lý state, đảm nhận nhiệm vụ truyền state đến UI
-  //final stateController = StreamController<RemoteState>();
-
-  final stateController = BehaviorSubject<RemoteState>();
+  //final stateController = StreamController<RemoteState>();   //Cái này không thể lắng nghe ở nhiều màn hình
+  final stateController = BehaviorSubject<RemoteState>();  // <RemoteState> Là kiểu dữ liệu trả về
 
   RemoteBloc() {
     // lắng nghe khi eventController push event mới
@@ -50,40 +49,23 @@ class RemoteBloc {
 
 
 class ChannelBloc {
-  var channelState = ChannelState(10); // init giá trị khởi tạo của RemoteState. Giả sử TV ban đầu có âm lượng 70
+  var channelState = ChannelState(10);
 
-  // tạo 2 controller
-  // 1 cái quản lý event, đảm nhận nhiệm vụ nhận event từ UI
   final channelEventController = StreamController<ChannelEvent>();
-
-  // 1 cái quản lý state, đảm nhận nhiệm vụ truyền state đến UI
-  //final stateController = StreamController<RemoteState>();
-
   final channelStateController = BehaviorSubject<ChannelState>();
 
   ChannelBloc() {
-    // lắng nghe khi eventController push event mới
     channelEventController.stream.listen((ChannelEvent event) {
-      // người ta thường tách hàm này ra 1 hàm riêng và đặt tên là: mapEventToState
-      // đúng như cái tên, hàm này nhận event xử lý và cho ra output là state
-
       if (event is ChannelIncrementEvent) {
-        // nếu eventController vừa add vào 1 IncrementEvent thì chúng ta xử lý tăng âm lượng
         channelState = ChannelState(channelState.channel + event.increment);
       } else if (event is ChannelDecrementEvent) {
-        // xử lý giảm âm lượng
         channelState = ChannelState(channelState.channel - event.decrement);
       } else {
-        // xử lý mute
         channelState = ChannelState(0);
       }
-
-      // add state mới vào stateController để bên UI nhận được
       channelStateController.sink.add(channelState);
     });
   }
-
-  // khi không cần thiết thì close tất cả controller
   void dispose() {
     channelStateController.close();
     channelEventController.close();

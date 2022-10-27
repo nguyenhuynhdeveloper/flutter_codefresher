@@ -4,6 +4,7 @@ import 'remote_bloc.dart';
 import 'remote_event.dart';
 import 'remote_state.dart';
 
+// 2 object biến toàn cục . có method để có thể phát sự kiện , và lắng nghe state
 final bloc = RemoteBloc();
 final channelBloc = ChannelBloc();
 
@@ -49,60 +50,46 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+
             StreamBuilder<RemoteState>(
-              // sử dụng StreamBuilder để lắng nghe Stream <=== new
+              // sử dụng StreamBuilder để lắng nghe Stream ==> Lắng nghe sự thay đổi của state
               stream: bloc.stateController.stream,
               // truyền stream của stateController vào để lắng nghe <=== new
               initialData: bloc.state,
               // giá trị khởi tạo chính là volume 70 hiện tại <=== new
-              builder:
-                  (BuildContext context, AsyncSnapshot<RemoteState> snapshot) {
-                RemoteState? _newState = snapshot.data;
-
+              builder: (BuildContext context, AsyncSnapshot<RemoteState> snapshot) {
+                RemoteState? _newState = snapshot.data;    // Đây chính là lấy ra state từ Bloc
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    //Text('Kênh hiện tại: ${_newState?.channel}'),      // Lấy ra giá trị kênh hiện tại
                     Text('Âm lượng hiện tại: ${_newState?.volume}')
                   ],
                 ); // update UI <=== new
               },
             ),
+
             StreamBuilder<ChannelState>(
-              // sử dụng StreamBuilder để lắng nghe Stream <=== new
-
-
               stream: channelBloc.channelStateController.stream,
-
-
-
-              // truyền stream của stateController vào để lắng nghe <=== new
               initialData: channelBloc.channelState,
-
-
-
-              // giá trị khởi tạo chính là volume 70 hiện tại <=== new
               builder:
                   (BuildContext context, AsyncSnapshot<ChannelState> snapshot) {
                 ChannelState? _newState = snapshot.data;
-
                 return Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-
                     Text('Kênh hiện tại: ${_newState?.channel}'),
-
                   ],
-                ); // update UI <=== new
+                );
               },
             ),
+
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                    return Page2();
+                    return Page2();   // navigator sang màn 2
                   }));
                 },
                 child: Text('Go to Screen 2')),

@@ -1,8 +1,9 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/components/cart_list.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/components/checkout_panel.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/components/custom_appbar.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/data/cart_state.dart';
 import 'package:flutter/material.dart';
+
+import 'components/cart_list.dart';
+import 'components/checkout_panel.dart';
+import '../../components/custom_appbar.dart';
+import 'data/cart_state.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _CartPageState extends State<CartPage> {
           onPressed: () {},
         ),
         body: CartList(
-          onPressedRemoveButton: (index) {
+          onPressedRemoveButton: (index)  {
             cartState.removeItem(index);
             setState(() {});
           },

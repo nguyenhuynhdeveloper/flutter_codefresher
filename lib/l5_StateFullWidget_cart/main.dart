@@ -18,18 +18,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
 
-      //Cách mà chuyển root khi chưa biết navigator
-      // home: CartPage(),
-      // home: const HomePage(),
-
-
       initialRoute: "home_page",
       routes: {
         "home_page": (context) {
           return const HomePage();
         },
         "cart_page": (context) {
-          return CartPage();
+          return const CartPage();
         },
       },
     );

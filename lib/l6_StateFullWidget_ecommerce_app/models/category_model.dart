@@ -1,13 +1,14 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/constants/img_string.dart';
+import '../constants/img_string.dart';
 
 class CategoryModel {
-  final String name;
-  final String icon;
-
   CategoryModel({
     required this.name,
     required this.icon,
   });
+  final String name;
+  final String icon;
+
+
 }
 
 List<CategoryModel> categoriesList = [

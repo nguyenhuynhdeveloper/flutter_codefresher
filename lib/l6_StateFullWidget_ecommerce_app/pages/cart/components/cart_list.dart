@@ -1,9 +1,10 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/models/cart_item_model.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/components/cart_item.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/data/cart_state.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/production/production_page.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+
+import '../../../models/cart_item_model.dart';
+import '../../../pages/cart/components/cart_item.dart';
+import '../../../pages/cart/data/cart_state.dart';
+import '../../../pages/production/production_page.dart';
+import '../../../widgets/custom_text.dart';
 
 class CartList extends StatelessWidget {
   const CartList({
@@ -47,10 +48,11 @@ class CartList extends StatelessWidget {
                     productName: cartItem.product.name,
                     productSize: cartItem.product.size,
                     productPrice: cartItem.product.currentPrice,
-                    onPressedRemoveButton: (index) =>
-                        onPressedRemoveButton(index),
                     productCount: cartItem.count,
+
                     onPressedAddButton: (index) => onPressedAddButton(index),
+                    onPressedRemoveButton: (index) => onPressedRemoveButton(index),
+
                   ),
                 );
               },

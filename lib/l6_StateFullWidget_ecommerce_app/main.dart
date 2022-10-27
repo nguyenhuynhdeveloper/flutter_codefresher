@@ -1,7 +1,8 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/cart_page.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/home/home_page.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/production/production_page.dart';
 import 'package:flutter/material.dart';
+
+import 'pages/cart/cart_page.dart';
+import 'pages/home/home_page.dart';
+import 'pages/production/production_page.dart';
 
 void main() {
   runApp(const MyApp());

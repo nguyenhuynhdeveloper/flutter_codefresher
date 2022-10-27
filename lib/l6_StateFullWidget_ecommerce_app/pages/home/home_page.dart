@@ -1,17 +1,16 @@
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/constants/img_string.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/data/cart_state.dart';
+import '../../constants/img_string.dart';
+import '../../pages/cart/data/cart_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/components/custom_appbar.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/components/badge_button.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/cart/cart_page.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/home/components/hello_panel.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/home/components/sale_off_panel.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/home/components/categories_pannel.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/home/components/product_panel.dart';
-import 'package:flutter_18/l6_StateFullWidget_ecommerce_app/pages/production/production_page.dart';
+import '../../components/custom_appbar.dart';
+import '../../components/badge_button.dart';
+import '../../pages/cart/cart_page.dart';
+import '../../pages/home/components/hello_panel.dart';
+import '../../pages/home/components/sale_off_panel.dart';
+import '../../pages/home/components/categories_panel.dart';
+import '../../pages/home/components/product_panel.dart';
+import '../../pages/production/production_page.dart';
 
 class HomePage extends StatefulWidget {
-  //something changed here
   const HomePage({Key? key}) : super(key: key);
 
   static const routeName = "homePage";
@@ -37,14 +36,15 @@ class _HomePageState extends State<HomePage> {
       top: false,
       child: Scaffold(
         appBar: CustomAppBar(
-          leading: IconButton(
+          leading:
+          IconButton(
             onPressed: () {},
             icon: const Icon(
               Icons.home,
               size: 32,
             ),
           ),
-          action: [
+          action: [         // Giỏ hàng ở ô bên phải của thanh appBar
             BadgeButton(
               badgeCount: cartState.totalItems,
               onPressedBadgeButton: () {
@@ -62,19 +62,24 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 10),
-                const HelloPanel(userName: 'Rocky'),
+
+                const HelloPanel(userName: 'Rocky'),   // ô chào khách hàng
+
                 const SizedBox(height: 25),
-                SaleOffPanel(
+
+                SaleOffPanel(    // Thanh ngang sản phẩm giảm giá
                   saleOffImage: ImgString.appleWatchImg,
                   onPressed: () {},
                 ),
                 const SizedBox(height: 25),
-                CategoriesPanel(
+
+                CategoriesPanel(   // Thanh ngang sản phẩm ưu thích
                   onPressedSeeAll: () {},
                   onPressedIcon: () {},
                 ),
                 const SizedBox(height: 25),
-                ProductPanel(
+
+                ProductPanel(    //Thang ngang sản phẩm
                   onPressed: (product) {
                     print('Product: ${product.name}');
                     Navigator.of(context)
