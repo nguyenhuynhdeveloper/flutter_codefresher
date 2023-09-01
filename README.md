@@ -1,24 +1,27 @@
-l1 là : code khi khởi tạo ứng dụng
+l1_dart là : Buổi 1 học về dart 
 l3_login_my là : Bài tập về nhà buổi 2  vẽ giao diện đăng nhập a Đại hướng dẫn
 l5_StateFullWidget_my : Bài tập về nhà buổi 5 vẽ giao diện giỏ hàng có cộng trừ item
-l8_Future_FutureBuilder_https_my: Bài tậo vê nhà buổi 8 về Future + FutureBuilder + https
+l8_Future_FutureBuilder_https_my: Bài tập về nhà buổi 8 về Future + FutureBuilder + https
 
 // code của bạn Hưng
 l4_navigator == learning_flutter  : Học về StatelesWidget
 
-l5_StateFullWidget_cart == learning_cart   : Học vẽ giao diện
-learning_cart: Buổi 5 cũng là của bạn hungf1324 nhưng đã bị thầy Hoàn Đỗ set-url git của thầy duylehong  : Dạy về stateFull  quản lý state ở trong cùng 1 màn hình
+l5_StateFullWidget_cart == learning_cart  : Buổi 5 cũng là của bạn hungf1324 nhưng đã được thầy Hoàn Đỗ set-url git của thầy duylehong  
+Học vẽ giao diện - Dạy về stateFull  quản lý state ở trong cùng 1 màn hình
+Cũng có 1 file lession_5 của thầy Hoàn Đỗ dạy trên lớp - nhưng không đầy đủ 
 
 l5_StateFullWidget_ecommerce == learning_ecommerce   : Học vẽ giao diện
 l6_StateFullWidget_ecommerce_app == ecommerce_app    : Học về StatefulWidget
 l8_Future_https == learning_album                    : Học về Future- FutureBuilder- https
-
 l9_provider_ecommerce_app == provider_ecommerce_app  : Học về Provider commit cũ của thầy duy : dạy về Provider trong buổi 9
+
+// Code trên lớp của Thầy Duy
+l8_http_request                                      : Học về Call API bằng http
+l9_provider_tutorial       : code đã commit cũ của thầy Duy
 l10                                                  : Học về Bloc
 l11                                                  : học về SharePreferences  : Lưu trữ vào local storage
 l12  : Học về SQ life                                : refactor lại bài của bạn Tài 
 
-l9_provider_tutorial       : code đã commit cũ của thầy duy
 
 ### Buổi 1 ngày 2/8/2022 : Thầy đỗ hoàn đến chỉ giới thiệu Flutter và giao lưu
 ### Buổi 2 ngày 4/8/2022 : Học vẽ view StateLessWidget  và dạy cách search giải quyết vấn đề
@@ -156,11 +159,11 @@ RichText : Muốn style trong 1 cụm Text
 
 Expadend chỉ là 1 thằng con của Flexiable mà thôi nhưng có thuộc tính flex : tight
 
-padding , Position cũng là widtget
+padding , Position cũng là widget
 container làm được tất cả mọi CSS
 
 MediaQuery.of(context).size.width   : Lấy chiều ngang màn hình
-SizeBox : Để có khoảng trống chiều rộng chiều ngang gì đấy
+SizeBox() : Để có khoảng trống chiều rộng chiều ngang gì đấy
 
 ### Buổi 6 19/8/2022
 // project clone từ git của bạn hùng : chưa thay đổi set-url
@@ -513,3 +516,6 @@ firebase.flutter.dev : Viết cho thuần Flutter : nên ưu tiên đọc ở đ
 
 ### Buổi 16: ngày 22/9/2022
 Học về git  
+
+### Buổi 17: 
+Tổng kết và giới thiệu các đồ án tốt nghiệp

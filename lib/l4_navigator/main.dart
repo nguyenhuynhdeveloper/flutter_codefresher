@@ -19,7 +19,7 @@ void main() {
   );
 }
 
-//Map danh sách các bàm hình có thể chuyển qua chuyển lại trong ứng dụng : get routeList => {}
+//Map danh sách các màn hình có thể chuyển qua chuyển lại trong ứng dụng : get routeList => {}
 Map<String, WidgetBuilder> get routesList => {
       HomePage.routeName: (context) => const HomePage(),
       CalculatorPage.routeName: (context) => const CalculatorPage(),

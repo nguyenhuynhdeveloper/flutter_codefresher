@@ -35,7 +35,7 @@ class HomePage extends StatelessWidget {
                   //   ),
                   // );
 
-                  // còn cách chuyển màn = name
+                  // Cácg 2 cách chuyển màn = named 
                   final result =
                       await Navigator.of(context).pushNamed("cart_page");
                   print("hoan.dv: result is $result");

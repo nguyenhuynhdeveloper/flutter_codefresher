@@ -43,8 +43,8 @@ class CartState {
   // Thêm 1 sản phẩm vào giở hàng
   void addProduct(ProductModel product) {
     cartList.where((cartList) => cartList.product.id == product.id).isNotEmpty
-        ? addItem(productIndex(product))
-        : cartList.add(CartItemModel(product: product, count: 1));
+        ? addItem(productIndex(product))     // Nếu item đó đã có trong giỏ hàng thì cộng số lượng của item đó
+        : cartList.add(CartItemModel(product: product, count: 1));  // Nếu chưa có trong giỏ hàng thì thêm sản phẩm đó vào giỏ với số lượng = 1
   }
 }
 
