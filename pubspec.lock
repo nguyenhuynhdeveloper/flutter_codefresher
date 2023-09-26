@@ -393,14 +393,14 @@ packages:
       name: permission_handler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "10.4.3"
+    version: "9.2.0"
   permission_handler_android:
     dependency: transitive
     description:
       name: permission_handler_android
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "10.3.4"
+    version: "9.0.2+1"
   permission_handler_apple:
     dependency: transitive
     description:

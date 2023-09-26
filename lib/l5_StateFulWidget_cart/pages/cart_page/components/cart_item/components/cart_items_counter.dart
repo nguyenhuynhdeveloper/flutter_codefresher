@@ -26,7 +26,7 @@ class CartItemsCounter extends StatelessWidget {
         Card(
           elevation: 2.5,
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(2.0),
             child: Text(itemCount.toString()),     //Tổng số lượng Item đã mua
           ),
         ),

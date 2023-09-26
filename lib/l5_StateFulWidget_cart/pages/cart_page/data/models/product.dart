@@ -5,6 +5,7 @@ class Product {
   final String image;
   final double price;
 
+// Constructor của Class
   Product({
     required this.name,
     required this.image,

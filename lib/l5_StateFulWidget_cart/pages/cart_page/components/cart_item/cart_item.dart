@@ -37,6 +37,7 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double subTotal = price * itemCount;   //Khi Đã nhận được đủ giá và số lượng sản phẩm => tính được tổng tiền của mặt hàng đó
+
     return ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(20)),   //border tất cả 4 góc
       child: Container(
@@ -81,7 +82,7 @@ class CartItem extends StatelessWidget {
                         'Ships Free',
                         style: TextStyle(
                           color: Colors.orange,
-                          fontSize: 18,
+                          fontSize: 12,
                         ),
                       ),
                       CartItemsCounter(   // Widget tổng số lượng item hàng

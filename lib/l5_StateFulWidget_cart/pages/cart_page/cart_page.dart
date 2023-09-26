@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';   // import Kiểu vẽ giao diện
+
 // import các widget common
 import '../../pages/cart_page/components/cart_list.dart';
 import '../../pages/cart_page/components/checkout_panel.dart';
 
-//import file state của màn hình
+//import file state của màn hình  // Đây không phải là 1 biến của màn hình -- mà là 1 biến Global của toàn App và khi import vào thì ở bất cứ đâu cũng có thể thay đối giá trị của biến đó 
 import '../../pages/cart_page/data/cart_state.dart';
 
 // import các object đối tượng sẽ được dùng trong màn hình
@@ -22,32 +23,35 @@ class _CartPageState extends State<CartPage> {
   //Khởi tạo giá trị dữ liệu của màn hình
   @override
   void initState() {     //Đây là 1 vòng đời của widget - nơi khởi tạo các state của widget
+    super.initState();
 
     for (int i = 0; i < 10; i++) {
-      //cartState là mảng Set đã được khai báo tại file cart_state.dart
+      // cartState là mảng Set đã được khai báo tại file cart_state.dart : Là 1 biến ở phạm vi toàn app , ở bất cứ đâu có thể thỏ vào và thay đổi giá trị 
       cartState.productList.add(
         CartItemModel(
           product: Product(
             name: 'Túi da ${i + 1}',
             image:
-                "https://i0.wp.com/www.giztechreview.com/wp-content/uploads/2021/10/Intel-12th-Generation-Core-i9-12900K-Processor-Unboxing-9.jpg",
+                "https://product.hstatic.net/1000397717/product/anh_chup_man_hinh_2022-07-26_luc_10.37.26_8dce9a673e6345e482112e4883fa9b25_master.png",
             price: 200,
           ),
         ),
       );
     }  // :Lặp để tạo ra có 10 sản phẩm trong giỏ hàng
 
-    super.initState();
   }
 
+ // Vòng đời Render : Phần vẽ giao diện
   @override
-  Widget build(BuildContext context) {    //Phần ve giao diện
+  Widget build(BuildContext context) {   
     return Scaffold(
+
       appBar: AppBar(
         title: const Text('My Cart'),
         centerTitle: false,
         backgroundColor: Colors.red,
       ),
+
       body: SingleChildScrollView(      //widget SingChildScrollView : giúp có thể scroll ở màn hình
         child: Column(
           children: [
@@ -55,7 +59,7 @@ class _CartPageState extends State<CartPage> {
             CartList(
               onPlusCartItemClicked: (index) {    //method cộng số lượng sản phẩm  sẽ chạy khi ấn cộng sản phầm :Cha khai báo truyền xuống cho thằng con ở dưới chạy
                 cartState.productList.elementAt(index).count++;
-                setState(() {});
+                setState(() {});   // Để setState ở đây để có thể render lại View 
               },
               onMinusCartItemClicked: (index) {     //method trừ số lượng sản phẩm
                 cartState.productList.elementAt(index).count--;
@@ -71,6 +75,7 @@ class _CartPageState extends State<CartPage> {
           ],
         ),
       ),
+
       bottomNavigationBar: CheckOutPanel(        //bottomNavigationBar là thanh tabbar chứa các icon để navigation sang các màn khác nhau
         onPressedCheckOutButton: () {
           // quay lại màn truóc đó
